@@ -1,0 +1,248 @@
+.foods__form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.foods__form h2 {
+  font-size: 2rem;
+  line-height: 2px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  margin: 30px 0;
+  color: #0a6135;
+  /* color: #19195b; */
+}
+
+.ulFoods {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  align-items: center;
+  row-gap: 2px;
+  /* background-color: #aaaaa817; */
+  padding-bottom: 20px;
+}
+.liFoods {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  border: #19195b solid 1px;
+  /* border-radius: 1rem; */
+  box-shadow: 0 2px 2px #06203a;
+  /* color: #0a6135; */
+  background-color: #a6c1b9;
+  height: 180px;
+  width: 150px;
+}
+
+.ulFoodDetails {
+  list-style: none;
+}
+
+.foodItem {
+  font-size: 1.3rem;
+  /* background-color: #0225250e; */
+}
+
+.foodName {
+  color: #fff;
+  /* font-size: 1.2rem; */
+  font-weight: 700;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.foodDesc {
+  color: #fff;
+  margin: 0;
+  text-wrap: wrap;
+}
+
+.foodPrice {
+  color: #fff;
+  margin: 0;
+  font-weight: 700;
+  text-align: center;
+  /* font-size: 0.8rem; */
+}
+.search {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+  width: 300px;
+  height: 25px;
+  padding-bottom: 10px;
+}
+.search input[type="search"] {
+  font-size: 12px;
+  width: 300px;
+  height: 35px;
+  border-radius: 30px;
+  background-color: #fff;
+  color: #3e4555;
+  box-shadow: 0 2px 2px #dddfe1;
+  padding-left: 35px;
+}
+.search label {
+  position: absolute;
+  font-size: 2rem;
+  color: #000;
+  font-weight: 600;
+  left: -99999px;
+}
+
+.searchInput::placeholder {
+  font-size: 1.5rem;
+  color: #3e4555;
+}
+
+.search svg {
+  position: absolute;
+  left: 10px;
+  top: -4px;
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.foodImg {
+  width: 140px;
+  height: 140px;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  cursor: pointer;
+}
+
+/*TABLETS*/
+
+@media screen and (max-width: 768px) {
+  .ulFoods {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 1rem;
+  }
+  .foodImg {
+    width: 230px;
+    height: 180px;
+    cursor: pointer;
+  }
+  .liFoods {
+    height: 220px;
+    width: 240px;
+  }
+  .foodName {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  .foodPrice {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  .foods__form > h2 {
+    font-size: 2.5rem;
+    color: #000;
+  }
+  .search {
+    width: 400px;
+    height: 60px;
+  }
+  .search input[type="search"] {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    padding-left: 60px;
+  }
+
+  .searchInput::placeholder {
+    font-size: 2rem;
+    color: #3e4555;
+  }
+
+  .search svg {
+    position: absolute;
+    left: -4px;
+    top: 8px;
+    cursor: pointer;
+    color: #ccc;
+  }
+
+  .home svg {
+    width: 80px;
+    height: 40px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .foods {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 750px;
+  }
+  .ulFoods {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+  .liFoods {
+    row-gap: 30px;
+    height: 580px;
+    width: 500px;
+  }
+
+  .foodImg {
+    width: 450px;
+    height: 450px;
+    cursor: pointer;
+  }
+  .foods__form > h2 {
+    font-size: 4rem;
+    color: #000;
+  }
+
+  .search {
+    width: 400px;
+    height: 60px;
+  }
+
+  .search input[type="search"] {
+    font-size: 20px;
+    width: 600px;
+    height: 60px;
+    padding-left: 60px;
+  }
+
+  .searchInput::placeholder {
+    font-size: 30px;
+    padding-top: 15px;
+  }
+
+  .search .searchSvg {
+    width: 50px;
+    height: 50px;
+    left: 12px;
+    top: 6px;
+  }
+
+  .home svg {
+    width: 40px;
+    height: 30px;
+  }
+  .foodName {
+    font-size: 3rem;
+    font-weight: 600;
+  }
+  .foodPrice {
+    font-size: 3rem;
+    font-weight: 600;
+  }
+}
