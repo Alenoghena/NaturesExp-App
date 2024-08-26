@@ -44,22 +44,6 @@ body {
   /* background-image: url(../../img/mediumField.jpg); */
 }
 
-/* .App__header {
-  grid-column: 1/-1;
-} */
-
-/* .sidebar {
-  display: flex;
-  flex-direction: column;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-} */
-
-/* .App_main{
-  display: flex;
-  flex
-} */
-
 .main {
   display: grid;
   grid-template-columns: 64px 1fr;
@@ -154,7 +138,4 @@ h4 {
     padding-bottom: 20px;
     line-height: 32px;
   }
-  /* .App {
-    width: 500px;
-  } */
 }

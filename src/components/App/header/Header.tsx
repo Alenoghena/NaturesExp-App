@@ -18,12 +18,6 @@ const Header = () => {
     <div className="headerContainer">
       <nav className="nav">
         <section className="links">
-          {/* {isClicked.pageSelected && (
-            <Link to="/foods" className="foodsLink">
-              <span>Products</span>
-            </Link>
-          )} */}
-
           <Link to="/contacts" className="contactsLink">
             <span>Contact</span>
           </Link>
@@ -48,13 +42,6 @@ const Header = () => {
             onClick={() => handleIsClicked("sidebarSelected")}
           />
         )}
-        {/* <header className="header">
-          <h4 className="subTitle">
-            {isClicked.pageSelected
-              ? "Menu Availability"
-              : "Menu List Availability"}
-          </h4>
-        </header> */}
       </div>
     </div>
   );
@@ -99,4 +86,22 @@ export default Header;
 
 {
   /* <h3 className="title">Online African Food Shop</h3> */
+}
+
+{
+  /* {isClicked.pageSelected && (
+            <Link to="/foods" className="foodsLink">
+              <span>Products</span>
+            </Link>
+          )} */
+}
+
+{
+  /* <header className="header">
+          <h4 className="subTitle">
+            {isClicked.pageSelected
+              ? "Menu Availability"
+              : "Menu List Availability"}
+          </h4>
+        </header> */
 }

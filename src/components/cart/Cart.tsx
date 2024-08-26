@@ -87,7 +87,8 @@ const Cart = () => {
               </label>
 
               <h3>
-                Total Bill is ${cartValue} for {cart.length} products
+                Total Bill is ${cartValue} for {cart.length}{" "}
+                {cart.length > 1 ? "products" : "product"}
               </h3>
             </li>
           </ul>
