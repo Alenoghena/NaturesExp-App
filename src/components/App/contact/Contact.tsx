@@ -1,5 +1,5 @@
 import React from "react";
-import "./Contacts.css";
+import "./Contact.css";
 import { Link } from "react-router-dom";
 
 const Contacts = () => {

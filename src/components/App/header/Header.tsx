@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { MdArrowBack } from "react-icons/md";
+import Sidebar from "../sidebar/Sidebar";
 import {
   initialStateType,
   useStateContext,
@@ -24,7 +25,7 @@ const Header = () => {
           )} */}
 
           <Link to="/contacts" className="contactsLink">
-            <span>Contacts</span>
+            <span>Contact</span>
           </Link>
 
           <Link to="/cart" className="cartLink">
@@ -35,7 +36,12 @@ const Header = () => {
           </section>
         </section>
       </nav>
-      {/* <div className="headerBtn">
+      {isClicked.sidebarSelected && (
+        <section className="sidebarContainer">
+          <Sidebar />
+        </section>
+      )}
+      <div className="headerBtn">
         {!isClicked.sidebarSelected && (
           <button
             className=" outlineMenu"
@@ -44,14 +50,14 @@ const Header = () => {
             <MdArrowBack />
           </button>
         )}
-        <header className="header">
+        {/* <header className="header">
           <h4 className="subTitle">
             {isClicked.pageSelected
               ? "Menu Availability"
               : "Menu List Availability"}
           </h4>
-        </header>
-      </div> */}
+        </header> */}
+      </div>
     </div>
   );
 };

@@ -119,7 +119,8 @@ label {
   font-weight: 400;
 }
 .btn {
-  background-color: #1f2e6d;
+  background-color: #0d482c;
+  /* background-color: #1f2e6d; */
   border-radius: 3px;
   box-shadow: #1b1919a2 0 2px 2px 0 inset;
   box-sizing: border-box;
@@ -136,6 +137,11 @@ label {
   white-space: nowrap;
   /* margin: 5px 0 0 20px; */
   border: 1px solid #3b6b81fd;
+}
+.linkCart svg {
+  color: #0a6767;
+  height: 30px;
+  width: 40px;
 }
 .btnOrder,
 .btnReturnMenu {
@@ -235,10 +241,9 @@ input[type="number"] {
   .btnReturnMenu {
     font-size: 16px;
   }
-  .shoppingCart svg {
-    color: #0a6767;
-    height: 60px;
-    width: 80px;
+  .linkCart svg {
+    height: 40px;
+    width: 60px;
   }
   .orderedItem h1 {
     font-size: 2rem;
@@ -325,16 +330,12 @@ input[type="number"] {
     width: 150px;
   }
 
-  /* .shoppingCart {
-    justify-self: center;
-    margin: 0 0 30px 50px;
-  }*/
-  .shoppingCart svg {
+  .linkCart svg {
     height: 40px;
     width: 60px;
   }
 
-  .shoppingCart {
+  .linkCart {
     justify-self: right;
     align-self: flex-start;
   }

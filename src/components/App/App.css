@@ -67,6 +67,9 @@ body {
 .routes {
   grid-column: 1/-1;
 }
+.App__header {
+  grid-column: 1/-1;
+}
 .sidebarContainer {
   grid-column: 1/2;
 }
