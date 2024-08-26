@@ -24,11 +24,10 @@
   left: 0;
   transition: 350ms;
 }
-.btnContainer .btnClose {
-  background-color: #fff;
-  border-radius: 50%;
+.sidebar .btnClose {
+  color: #fff;
   cursor: pointer;
-  font-size: 20px;
+  width: 20px;
   margin-right: 40px;
 }
 
@@ -40,18 +39,23 @@
   background-color: #06482f;
   box-shadow: none;
 }
+/* @media screen and (max-width: 768px) {
+  .sidebar .btnClose {
+    font-size: 1px;
+    margin-right: 40px;
+  }
+} */
 
 @media screen and (max-width: 480px) {
-  .btnContainer .sidebar-btn {
+  /* .btnContainer .sidebar-btn {
     font-size: 10px;
     margin-left: 30px;
-  }
+  } */
 
   .btnContainer .btnClose {
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 20px;
-    margin-top: 25px;
-    margin-left: 30px;
+    width: 30px;
+  }
+  .btnContainer.active {
+    height: 1100px;
   }
 }

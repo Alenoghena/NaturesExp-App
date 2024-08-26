@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MdArrowBack } from "react-icons/md";
+import { MdMenu } from "react-icons/md";
 import Sidebar from "../sidebar/Sidebar";
 import {
   initialStateType,
@@ -43,12 +43,10 @@ const Header = () => {
       )}
       <div className="headerBtn">
         {!isClicked.sidebarSelected && (
-          <button
+          <MdMenu
             className=" outlineMenu"
             onClick={() => handleIsClicked("sidebarSelected")}
-          >
-            <MdArrowBack />
-          </button>
+          />
         )}
         {/* <header className="header">
           <h4 className="subTitle">
