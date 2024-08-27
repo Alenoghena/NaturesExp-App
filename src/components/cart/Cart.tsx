@@ -107,16 +107,3 @@ const Cart = () => {
 };
 
 export default Cart;
-
-{
-  /* <li className="trash">
-              {itemId && (
-                <FaTrashAlt
-                  role="button"
-                  tabIndex={0}
-                  aria-label={`Delete ${itemId}`}
-                  onClick={() => handleDelete(itemId)}
-                />
-              )}
-            </li> */
-}

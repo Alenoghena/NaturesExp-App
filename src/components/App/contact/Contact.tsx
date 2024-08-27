@@ -1,7 +1,7 @@
 import "./Contact.css";
 import { Link } from "react-router-dom";
 
-const Contacts = () => {
+const Contact = () => {
   return (
     <div className="contactsContainer">
       <h2>Head Office:</h2>
@@ -22,4 +22,4 @@ const Contacts = () => {
   );
 };
 
-export default Contacts;
+export default Contact;

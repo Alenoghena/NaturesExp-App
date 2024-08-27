@@ -4,6 +4,7 @@ import React, {
   useState,
   useCallback,
   useEffect,
+  useMemo,
 } from "react";
 
 export type initialStateType = {
@@ -47,10 +48,8 @@ export type fudType = {
   item?: fudInType[];
   quantity?: number;
 };
-// export type fudArr = fudType[];
 
 export type foodArrType = foodType[];
-// export type foodArType = [string, foodType[]];
 
 type useContextType = {
   name: string | null;
@@ -342,10 +341,6 @@ const foodItemArr = [
 ];
 
 export const ContextProvider = ({ children }: ContextProviderProps) => {
-  // const unitPrice = () => {
-  //   return selectedFood.price;
-  // };
-
   const getLocalStorage = () => {
     const cartList = localStorage.getItem("cart");
 
@@ -360,7 +355,6 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
     [] as fudInType[][]
   );
   const [foodItems, setFoodItems] = useState<foodArrType>([] as foodArrType);
-  const [fudItems, setFudItems] = useState<fudInType[]>([] as fudInType[]);
   const [cart, setCart] = useState<foodArrType>([] as foodArrType);
   const [selectedFood, setSelectedFood] = useState<fudInType>({} as fudInType);
 
@@ -477,13 +471,13 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
   const handleSelect = (event: any, title: string) => {
     foodObjArr1.map((food) => {
       if (food.name === title) {
-        foodLi = food.item.find((item: fudInType) => {
+        return (foodLi = food.item.find((item: fudInType) => {
           if (
             item.ID === parseInt(event.currentTarget.dataset.id) &&
             itemId === null
           ) {
             //sets itemId to display delete icon
-            console.log("first");
+
             setItemId(parseInt(event.currentTarget.dataset.id));
             return parseInt(event.currentTarget.dataset.id);
           } else if (
@@ -498,8 +492,9 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
             setItemId(null);
             return null;
           }
-        });
+        }));
       }
+      return food;
     });
     if (foodLi) {
       setTotalAmount(String(Number(foodLi.price)));
@@ -511,12 +506,7 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
     if (menuItems.length === 0) {
       foodObjLi = foodObjArr1.map((item) => {
         if (item.id === parseInt(event.currentTarget.dataset.id)) {
-          const foodIt = item.item.map((food) => {
-            return food;
-          });
-
           setFoodID(item.id);
-          setFudItems(foodIt);
           handleIsClicked("componentSelected");
 
           return item.item;
@@ -530,7 +520,7 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
       foodObjLi = menuItems.map((item, index) => {
         if (index + 1 === parseInt(event.currentTarget.dataset.id)) {
           setFoodID(index + 1);
-          setFudItems(item);
+
           handleIsClicked("componentSelected");
           return item;
         } else {
@@ -713,8 +703,7 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
       });
     }
   };
-
-  let listAr: fudType[] = [];
+  let listAr: fudType[] = useMemo(() => [], []);
 
   useEffect(() => {
     totalCartValue();
@@ -725,12 +714,11 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
   }, [searchTerm]);
 
   useEffect(() => {
-    setFudItems([...foodItemArr]);
     setFoodItems(foodItemArr);
 
     foodObjArr1.map((food) => {
-      food.item.map((foodItem) => {
-        listAr.push({
+      return food.item.map((foodItem) => {
+        return listAr.push({
           id: foodItem.ID,
           name: foodItem.title,
           quantity: foodItem.quantity,
@@ -739,24 +727,22 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
     });
 
     setFoodList([...listAr]);
-  }, []);
+  }, [listAr]);
 
   useEffect(() => {
     menuItems.map((food) => {
-      food.map((foodItem) => {
-        listAr.push({
+      return food.map((foodItem) => {
+        return listAr.push({
           id: foodItem.ID,
           name: foodItem.title,
           quantity: foodItem.quantity,
         });
       });
     });
-
-    setFoodList([...listAr]);
-  }, [menuItems]);
+    setFoodList(listAr);
+  }, [menuItems, listAr]);
 
   return (
-    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <StateContext.Provider
       value={{
         menuItems,
@@ -804,208 +790,3 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
 };
 
 export const useStateContext = () => useContext(StateContext);
-
-// const handleSelectObj1 = (event: any) => {
-//   foodObjList = Object.entries(foodObjArr).find(([keyValue, value]) => {
-//     console.log(parseInt(event.currentTarget.dataset.id));
-
-//     if (parseInt(keyValue) === parseInt(event.currentTarget.dataset.id)) {
-//       console.log(value);
-//       return value;
-//     }
-//   });
-//   console.log(foodObjList);
-//   if (foodObjList?.length) {
-//     setSelectedFoodArr(foodObjList);
-//     handleIsClicked("componentSelected");
-//   }
-// };
-
-///////////////////////////////////////////////////////////////
-
-// const updateQuantity = (
-//   id: number,
-//   orderQuantity: number,
-//   itemQuantity: number
-// ) => {
-//   try {
-//     let cartList: foodArrType;
-//     let menuSelected: foodType;
-
-//     const updatedMenuItems: foodArrType = selectedFoodArr[1].map(
-//       (item: foodType) => {
-//         const isCartSame: boolean = cart.some(
-//           (cartItem: foodType) => cartItem.id === id
-//         );
-
-//         if (Number(orderQuantity) > itemQuantity)
-//           throw new Error(
-//             "Quantity above stock. Please check available stock and enter the right value!"
-//           );
-//         if (item.id === id) {
-//           if (isCartSame) {
-//             cartList = cart.map((cartItem: foodType) => {
-//               if (cartItem.id === id) {
-//                 return {
-//                   ...cartItem,
-//                   quantity: cartItem.quantity + Number(orderQuantity),
-//                   totalAmount: String(
-//                     (cartItem.quantity + Number(orderQuantity)) *
-//                       Number(cartItem.price)
-//                   ),
-//                 };
-//               } else {
-//                 return cartItem;
-//               }
-//             });
-//             console.log("same:", cartList);
-//             setErrorMessage(false);
-//             setCart([...cartList]);
-//           }
-//           if (!isCartSame) {
-//             cartList = [
-//               {
-//                 id: id,
-//                 name: item.name,
-//                 price: item.price,
-//                 quantity: Number(orderQuantity),
-//                 image: item.image,
-//                 totalAmount,
-//               },
-//             ];
-//             console.log("New:", cartList);
-//             setErrorMessage(false);
-//             console.log(cart, cartList);
-//             setCart([...cart, ...cartList]);
-//           }
-
-//           handleIsClicked("orderSelected");
-//           //menuSelected use to update selected item
-//           menuSelected = {
-//             ...item, //we are spreading the item, an object, here
-//             quantity: item.quantity - Number(orderQuantity),
-//           };
-//           console.log(menuSelected);
-//           // setSelectedFoodArr([
-//           //   selectedFoodArr[0],
-//           //   [...selectedFoodArr[1], menuSelected],
-//           // ]);
-//           //return the updated item here and save to updatedMenuItems
-//           return menuSelected;
-//         } else {
-//           //return items not updated here and save to updatedMenuItems
-//           return item;
-//         }
-//       }
-//     );
-
-//     setSelectedFoodArr([selectedFoodArr[0], updatedMenuItems]);
-
-//   } catch (err) {
-//     setErrorMessage(true);
-//     throw err;
-//   }
-// };
-
-//////////////////////////////////////////////////////////////////
-
-// const foodArr = [
-//   {
-//     id: 1,
-//     name: "Chicken Burger",
-//     quantity: 40,
-//     desc: `Fried chicken burger - lettuce, tomato, cheese and
-//       mayonnaise`,
-//     price: "24",
-//     image: "cb.jpg",
-//   },
-//   {
-//     id: 2,
-//     name: "Veg Burger",
-//     quantity: 30,
-//     desc: `Plant-based burger - lettuce, tomato, vegan cheese and
-//       mayonnaise`,
-//     price: "22",
-//     image: "vb.jpg",
-//   },
-//   {
-//     id: 3,
-//     name: "Chips",
-//     quantity: 50,
-//     desc: "Potato chips fried to perfection",
-//     price: "7",
-//     image: "chips.jpg",
-//   },
-//   {
-//     id: 4,
-//     name: "Ice Cream",
-//     quantity: 30,
-//     desc: "Ice cream - Vanilla ice cream double scoop",
-//     price: "4",
-//     image: "ic.jpg",
-//   },
-//   {
-//     id: 5,
-//     name: "Dried Ukwa Seeds",
-//     quantity: 30,
-//     desc: "1KG of Dried Ukwa - Breadfruit Seeds",
-//     price: "20",
-//     image: "dried ukwa seeds.jpg",
-//   },
-//   {
-//     id: 6,
-//     name: "Fresh Ukwa Seeds",
-//     quantity: 20,
-//     desc: "1KG of Fresh Ukwa -Breadfruit Seeds",
-//     price: "15",
-//     image: "fresh ukwa seeds.jpg",
-//   },
-//   {
-//     id: 7,
-//     name: "Oron Crayfish",
-//     quantity: 20,
-//     desc: "1KG of Oron Crayfish",
-//     price: "100",
-//     image: "cf.jpg",
-//   },
-//   {
-//     id: 8,
-//     name: "Honey Beans",
-//     quantity: 20,
-//     desc: "1KG of Honeybeans",
-//     price: "15",
-//     image: "honeybeans.jpg",
-//   },
-//   {
-//     id: 9,
-//     name: "Okomu Red Oil",
-//     quantity: 20,
-//     desc: "1KG of Red oil",
-//     price: "50",
-//     image: "oro.jpg",
-//   },
-//   {
-//     id: 10,
-//     name: "plantain-flour",
-//     quantity: 20,
-//     desc: "1KG of plantain-flour",
-//     price: "45",
-//     image: "plantain-flour.jpg",
-//   },
-//   {
-//     id: 11,
-//     name: "Red Beans",
-//     quantity: 20,
-//     desc: "1KG of red beans",
-//     price: "20",
-//     image: "redbeans.jpg",
-//   },
-//   {
-//     id: 12,
-//     name: "White Beans",
-//     quantity: 20,
-//     desc: "1KG of white beans",
-//     price: "20",
-//     image: "whitebeans.jpg",
-//   },
-// ];

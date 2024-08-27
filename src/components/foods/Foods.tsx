@@ -1,7 +1,6 @@
 import React from "react";
 import "./Foods.css";
-import { FaLongArrowAltLeft, FaSearch } from "react-icons/fa";
-// import FoodItems from "../orders/FoodOrder";
+import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import {
   foodArrType,
@@ -44,8 +43,6 @@ const Foods = () => {
 
       <ul className="ulFoods">
         {foodItems.map((item) => {
-          //Show here if not selected.
-
           return (
             //Displays List of items
 
@@ -76,13 +73,3 @@ const Foods = () => {
 };
 
 export default Foods;
-
-{
-  /* {!isClicked.componentSelected && (
-        <nav className="home">
-          <Link to="/">
-            <FaLongArrowAltLeft />
-          </Link>
-        </nav>
-      )} */
-}

@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import MdTick, { MdCheck } from "react-icons/md";
+import { MdCheck } from "react-icons/md";
 import {
   useStateContext,
   fudType,
@@ -25,6 +25,7 @@ const Home = () => {
   const scrollToSection = () => {
     sectionRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+  console.log(foodList);
   return (
     <div className="home">
       <div className="farmContainer">
@@ -72,16 +73,3 @@ const Home = () => {
 };
 
 export default Home;
-{
-  /* {selectedDisplay.length > 0 &&
-            selectedDisplay.slice(0, 12).map((food) =>
-              food.map((item) => {
-                return (
-                  <li key={item.id} className="liApp">
-                    {item.title}
-                    <span className="quantItem">{item.quantity}</span>
-                  </li>
-                );
-              })
-            )} */
-}
