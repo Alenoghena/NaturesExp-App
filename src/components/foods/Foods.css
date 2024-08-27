@@ -7,8 +7,8 @@
 }
 
 .foods__form h2 {
-  font-size: 2rem;
-  line-height: 2px;
+  font-size: 3.5rem;
+  line-height: 36px;
   letter-spacing: 1.5px;
   font-weight: 600;
   margin: 30px 0;
@@ -21,7 +21,7 @@
   grid-template-columns: repeat(5, 1fr);
   justify-content: center;
   align-items: center;
-  row-gap: 2px;
+  row-gap: 10px;
   /* background-color: #aaaaa817; */
   padding-bottom: 20px;
 }
@@ -36,8 +36,8 @@
   box-shadow: 0 2px 2px #06203a;
   /* color: #0a6135; */
   background-color: #a6c1b9;
-  height: 180px;
-  width: 150px;
+  height: 300px;
+  width: 260px;
 }
 
 .ulFoodDetails {
@@ -51,7 +51,7 @@
 
 .foodName {
   color: #fff;
-  /* font-size: 1.2rem; */
+  font-size: 2.2rem;
   font-weight: 700;
   text-align: center;
   margin-right: 20px;
@@ -68,7 +68,7 @@
   margin: 0;
   font-weight: 700;
   text-align: center;
-  /* font-size: 0.8rem; */
+  font-size: 2.2rem;
 }
 .search {
   display: flex;
@@ -76,19 +76,18 @@
   justify-content: center;
   align-items: center;
   margin: 30px 0;
-  width: 300px;
-  height: 25px;
-  padding-bottom: 10px;
+  width: 450px;
+  height: 50px;
 }
 .search input[type="search"] {
   font-size: 12px;
-  width: 300px;
-  height: 35px;
+  width: 450px;
+  height: 50px;
   border-radius: 30px;
   background-color: #fff;
   color: #3e4555;
   box-shadow: 0 2px 2px #dddfe1;
-  padding-left: 35px;
+  padding-left: 46px;
 }
 .search label {
   position: absolute;
@@ -99,23 +98,23 @@
 }
 
 .searchInput::placeholder {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   color: #3e4555;
 }
 
 .search svg {
   position: absolute;
-  left: 10px;
-  top: -4px;
-  height: 25px;
-  width: 25px;
+  left: 15px;
+  top: 8px;
+  height: 35px;
+  width: 35px;
   cursor: pointer;
   color: #ccc;
 }
 
 .foodImg {
-  width: 140px;
-  height: 140px;
+  width: 250px;
+  height: 240px;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   cursor: pointer;
@@ -130,21 +129,22 @@
     row-gap: 1rem;
   }
   .foodImg {
-    width: 230px;
-    height: 180px;
+    width: 235px;
+    height: 220px;
     cursor: pointer;
   }
   .liFoods {
-    height: 220px;
-    width: 240px;
+    height: 300px;
+    width: 250px;
   }
-  .foodName {
-    font-size: 1.2rem;
+  .foodItem .foodName {
+    font-size: 2.6rem;
     font-weight: 600;
   }
-  .foodPrice {
-    font-size: 1.4rem;
-    font-weight: 600;
+
+  .foodItem .foodPrice svg {
+    width: 15px;
+    height: 15px;
   }
   .foods__form > h2 {
     font-size: 2.5rem;
@@ -185,7 +185,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 750px;
+    width: 500px;
   }
   .ulFoods {
     display: grid;
@@ -195,28 +195,28 @@
   }
   .liFoods {
     row-gap: 30px;
-    height: 580px;
-    width: 500px;
+    height: 400px;
+    width: 350px;
   }
 
   .foodImg {
-    width: 450px;
-    height: 450px;
+    width: 300px;
+    height: 300px;
     cursor: pointer;
   }
   .foods__form > h2 {
-    font-size: 4rem;
+    font-size: 2.5rem;
     color: #000;
   }
 
   .search {
-    width: 400px;
+    width: 300px;
     height: 60px;
   }
 
   .search input[type="search"] {
     font-size: 20px;
-    width: 600px;
+    width: 300px;
     height: 60px;
     padding-left: 60px;
   }

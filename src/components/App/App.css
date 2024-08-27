@@ -38,7 +38,7 @@ body {
   border: #a5c1f6 solid 2px;
   /* margin: 0 32px 0 64px; */
   margin: 0 auto;
-  width: 780px;
+  width: 1400px;
 
   /* transform: translate(-50%, 0%); */
   /* background-image: url(../../img/mediumField.jpg); */
@@ -80,8 +80,8 @@ h4 {
 .footer {
   text-align: center;
   grid-column: 1/-1;
-  font-size: 12px;
-  line-height: 18px;
+  font-size: 22px;
+  line-height: 30px;
   background-color: #0f311f;
   padding: 1rem 3.1rem;
   letter-spacing: 1.2px;
@@ -94,12 +94,15 @@ h4 {
 }
 
 .footer h2 {
-  line-height: 28px;
+  line-height: 40px;
 }
 
 /*TABLETS*/
 
 @media screen and (max-width: 768px) {
+  .App {
+    width: 768px;
+  }
   .footer {
     font-size: 120%;
     /* width: 820px; */
@@ -121,6 +124,7 @@ h4 {
     grid-template-columns: 32px 1fr;
     justify-content: center;
     align-items: center;
+    width: 500px;
   }
 
   .routes {

@@ -25,7 +25,7 @@ const Home = () => {
   const scrollToSection = () => {
     sectionRef.current?.scrollIntoView({ behavior: "smooth" });
   };
-  console.log(foodList);
+
   return (
     <div className="home">
       <div className="farmContainer">

@@ -8,6 +8,7 @@ import {
   initialStateType,
   useStateContext,
 } from "../../contexts/ContextProvider";
+import { MdCircle } from "react-icons/md";
 
 type FoodsProps = {
   menuItems: fudInType[][];
@@ -61,8 +62,10 @@ const Foods = () => {
               </Link>
 
               <div className="foodItem">
-                <span className="foodName">Buy {item.name}</span>
-                <span className="foodPrice">Price: ${item.price}</span>
+                <span className="foodName"> {item.name}</span>
+                <span className="foodPrice">
+                  <MdCircle /> ${item.price}
+                </span>
               </div>
             </li>
           );

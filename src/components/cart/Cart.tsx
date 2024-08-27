@@ -53,8 +53,8 @@ const Cart = () => {
           <ul className="cartList">
             {cart.map((item) => {
               return (
-                <li key={item.id} data-id={item.id} className="selItem">
-                  <h5 className="selFoodTitle">{item.name}</h5>
+                <li key={item.id} data-id={item.id} className="cartItem">
+                  <h5 className="cartFoodTitle">{item.name}</h5>
 
                   <img
                     className="CartImg"

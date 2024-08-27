@@ -1,5 +1,5 @@
 li > p {
-  font-size: 14px;
+  font-size: 3rem;
   font-weight: 500;
 }
 
@@ -46,8 +46,8 @@ li > p {
   box-shadow: 0 2px 2px #06203a;
   row-gap: 6px;
   /* color: #0a6135; */
-  height: 350px;
-  width: 220px;
+  height: 620px;
+  width: 400px;
   /* background-color: #a6c1b9; */
   background-color: #628a8c;
 }
@@ -70,7 +70,7 @@ li > p {
 
 .orderFoodDesc {
   margin-top: 2%;
-  font-size: 1.2rem;
+  font-size: 2rem;
   text-wrap: wrap;
   color: #020a0f;
   margin: 0 5px;
@@ -88,25 +88,12 @@ li > p {
 .liDetails {
   margin-top: 5px;
 }
-/* .inputFields {
-  //margin: 10px 0;
-  font-size: 0.8rem;
-  padding: 10px;
-  width: 200px;
-  border: 1px solid rgb(13, 138, 65);
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  background: #f5f0f0;
-  color: #051342;
-  outline: none;
-} */
+
 #quantity {
-  /* margin: 0 10px; */
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   padding: 10px;
-  width: 50px;
-  height: 28px;
+  width: 85px;
+  height: 35px;
   border: 1px solid rgb(13, 138, 65);
   border-top: none;
   border-left: none;
@@ -140,13 +127,13 @@ label {
 }
 .linkCart svg {
   color: #0a6767;
-  height: 30px;
-  width: 40px;
+  height: 40px;
+  width: 70px;
 }
 .btnOrder,
 .btnReturnMenu {
   margin: 10px 0;
-  font-size: 10px;
+  font-size: 20px;
 }
 
 .btn:hover,
@@ -162,21 +149,21 @@ label {
   color: #121106fd;
 }
 .orderedItem .orderQuantity {
-  font-size: 1.3rem;
+  font-size: 2rem;
 }
 
 .FoodImg {
-  width: 210px;
-  height: 140px;
+  width: 380px;
+  height: 300px;
   cursor: pointer;
 }
 .selFoodTitle {
   margin-bottom: 20px;
 }
 .liFields {
-  width: 130px;
-  height: 20px;
-  font-size: 12px;
+  width: 180px;
+  height: 35px;
+  font-size: 20px;
 }
 input[type="text"]::placeholder {
   font-size: 10px;
@@ -266,13 +253,13 @@ input[type="number"] {
 @media screen and (max-width: 480px) {
   .orderedItem {
     row-gap: 8px;
-    height: 750px;
-    width: 480px;
+    height: 550px;
+    width: 350px;
   }
   .foodOrder {
     display: grid;
     grid-template-columns: 1fr;
-    width: 750px;
+    width: 480px;
   }
 
   .ulFoodDetails {
@@ -284,23 +271,22 @@ input[type="number"] {
   }
 
   .orderedItem .orderFoodDesc {
-    font-size: 2.5rem;
-    width: 280px;
+    font-size: 1.8rem;
+    width: 340px;
     color: #000;
     line-height: 28px;
     font-weight: 500;
     margin-bottom: 10px;
   }
   .FoodImg {
-    width: 450px;
-    height: 300px;
-    margin-left: 10px;
+    width: 300px;
+    height: 200px;
   }
   .orderedItem .orderQuantity {
-    font-size: 28px;
+    font-size: 24px;
     color: #000;
     font-weight: 600;
-    width: 300px;
+    width: 250px;
   }
   input[type="text"] {
     width: 200px;

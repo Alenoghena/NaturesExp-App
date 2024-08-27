@@ -38,7 +38,7 @@ const Header = () => {
       <div className="headerBtn">
         {!isClicked.sidebarSelected && (
           <MdMenu
-            className=" outlineMenu"
+            className=" menu"
             onClick={() => handleIsClicked("sidebarSelected")}
           />
         )}

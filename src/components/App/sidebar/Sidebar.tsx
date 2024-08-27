@@ -20,10 +20,6 @@ const Sidebar = () => {
         isClicked.sidebarSelected ? "btnContainer active" : "btnContainer"
       }
     >
-      <section className="sidebar-btn">
-        <Button />
-      </section>
-
       <Link to="#" className="sidebar">
         <MdOutlineCancel
           role="button"
@@ -31,6 +27,9 @@ const Sidebar = () => {
           className="btnClose"
         />
       </Link>
+      <section className="sidebar-btn">
+        <Button />
+      </section>
     </div>
   );
 };
