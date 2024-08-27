@@ -63,7 +63,9 @@ const FoodItems = () => {
             </div>
             <ul className="ulFoodDetails">
               {menuItems.map((food, index) => {
-                if (foodID - 1 === index) {
+                if (foodID - 1 !== index) {
+                  return null;
+                } else {
                   return food.map((item) => {
                     return (
                       <li key={item.ID} className="orderedItem">
