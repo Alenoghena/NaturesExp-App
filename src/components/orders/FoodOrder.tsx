@@ -54,12 +54,6 @@ const FoodItems = () => {
               <Link to="/">
                 <button className="btn btnReturnMenu">Return to Menu</button>
               </Link>
-
-              {cart.length > 0 && (
-                <Link to="/cart" className="linkCart">
-                  <FaShoppingCart />
-                </Link>
-              )}
             </div>
             <ul className="ulFoodDetails">
               {menuItems.map((food, index) => {
@@ -121,15 +115,22 @@ const FoodItems = () => {
                           </form>
                         )}
                         {itemId === item.ID && (
-                          <button
-                            className="btn btnOrder"
-                            type="submit"
-                            onClick={() =>
-                              handleClick(item.ID, quantity, item.quantity)
-                            }
-                          >
-                            Submit Order
-                          </button>
+                          <div className="orderBox">
+                            <button
+                              className="btn btnOrder"
+                              type="submit"
+                              onClick={() =>
+                                handleClick(item.ID, quantity, item.quantity)
+                              }
+                            >
+                              Submit Order
+                            </button>
+                            {cart.length > 0 && (
+                              <Link to="/cart" className="linkCart">
+                                <FaShoppingCart />
+                              </Link>
+                            )}
+                          </div>
                         )}
                       </li>
                     );

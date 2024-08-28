@@ -1,24 +1,17 @@
 import { useRef } from "react";
 import { MdCheck } from "react-icons/md";
-import {
-  useStateContext,
-  fudType,
-  initialStateType,
-  fudInType,
-} from "../../contexts/ContextProvider";
+import { useStateContext, HomeInType } from "../../contexts/ContextProvider";
 import Header from "../App/header/Header";
 import { MdMoveDown } from "react-icons/md";
 import Foods from "../foods/Foods";
 import "./Home.css";
 
 type HomeProps = {
-  menuItems: fudInType[][];
-  foodList: fudType[];
-  isClicked: initialStateType;
+  listArRef: React.MutableRefObject<HomeInType[][]>;
 };
 
 const Home = () => {
-  const { foodList }: HomeProps = useStateContext();
+  const { listArRef }: HomeProps = useStateContext();
 
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -51,16 +44,18 @@ const Home = () => {
         </div>
         <ul className="foodApp">
           <li className="liAppHeading">Check Availability List</li>
-          {foodList.slice(0, 12).map((item) => {
-            return (
-              <li key={item.id} className="liApp">
-                <span className="check">
-                  <MdCheck />
-                </span>
-                <span> {item.name}</span>
-                <span className="quantItem">{item.quantity}</span>
-              </li>
-            );
+          {listArRef.current.map((food) => {
+            return food.map((item) => {
+              return (
+                <li key={item.id} className="liApp">
+                  <span className="check">
+                    <MdCheck />
+                  </span>
+                  <span> {item.name}</span>
+                  <span className="quantItem">{item.quantity}</span>
+                </li>
+              );
+            });
           })}
         </ul>
       </div>

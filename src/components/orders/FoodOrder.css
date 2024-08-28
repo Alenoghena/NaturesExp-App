@@ -1,3 +1,9 @@
+.orderBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+}
 li > p {
   font-size: 3rem;
   font-weight: 500;
@@ -32,7 +38,6 @@ li > p {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  /* background-color: #aaaaa817; */
   padding-bottom: 20px;
 }
 .orderedItem {
@@ -45,10 +50,8 @@ li > p {
   border-radius: 1rem;
   box-shadow: 0 2px 2px #06203a;
   row-gap: 6px;
-  /* color: #0a6135; */
   height: 620px;
   width: 400px;
-  /* background-color: #a6c1b9; */
   background-color: #628a8c;
 }
 
@@ -107,7 +110,6 @@ label {
 }
 .btn {
   background-color: #0d482c;
-  /* background-color: #1f2e6d; */
   border-radius: 3px;
   box-shadow: #1b1919a2 0 2px 2px 0 inset;
   box-sizing: border-box;
@@ -122,7 +124,6 @@ label {
   position: relative;
   text-align: center;
   white-space: nowrap;
-  /* margin: 5px 0 0 20px; */
   border: 1px solid #3b6b81fd;
 }
 .linkCart svg {
@@ -166,7 +167,7 @@ label {
   font-size: 20px;
 }
 input[type="text"]::placeholder {
-  font-size: 10px;
+  font-size: 20px;
   font-weight: 400;
 }
 input[type="number"] {
@@ -293,12 +294,6 @@ input[type="number"] {
     height: 35px;
     font-size: 20px;
   }
-  input[type="number"] {
-    width: 80px;
-    height: 40px;
-    font-size: 20px;
-    margin-right: 45px;
-  }
 
   input[type="text"]::placeholder {
     font-size: 20px;
@@ -344,7 +339,15 @@ input[type="number"] {
   #quantity {
     width: 100px;
     height: 40px;
+    font-size: 20px;
   }
+
+  /* input[type="number"] {
+    width: 80px;
+    height: 40px;
+    font-size: 20px;
+    margin-right: 45px;
+  } */
   .qtyContainer label {
     font-size: 2rem;
   }

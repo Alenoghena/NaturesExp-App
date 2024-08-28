@@ -3,8 +3,8 @@ import React, {
   useContext,
   useState,
   useCallback,
+  useRef,
   useEffect,
-  useMemo,
 } from "react";
 
 export type initialStateType = {
@@ -33,11 +33,23 @@ export type fudInType = {
   ID?: number;
   id?: number;
   title?: string;
-  name?: string;
+  name: string;
   quantity: number;
   desc: string;
   price: string;
   image: string;
+  length?: number;
+  totalAmount?: string;
+};
+export type HomeInType = {
+  ID?: number;
+  id?: number;
+  title?: string;
+  name?: string;
+  quantity: number;
+  desc?: string;
+  price?: string;
+  image?: string;
   length?: number;
   totalAmount?: string;
 };
@@ -46,7 +58,7 @@ export type fudType = {
   id?: number;
   name?: string;
   item?: fudInType[];
-  quantity?: number;
+  quantity: number;
 };
 
 export type foodArrType = foodType[];
@@ -57,7 +69,6 @@ type useContextType = {
   display: boolean;
   menuItems: fudInType[][];
   foodItems: foodArrType;
-  foodList: fudType[];
   selectedFood: fudInType;
   itemId: number | null;
   cart: foodArrType;
@@ -71,6 +82,7 @@ type useContextType = {
   searchTerm: string;
   activeMenu: boolean;
   errorMessage: boolean;
+  listArRef: React.MutableRefObject<HomeInType[][]>;
   setActiveMenu: (value: React.SetStateAction<boolean>) => void;
   setScreenSize: (value: React.SetStateAction<any>) => void;
   screenSize: number | undefined;
@@ -374,7 +386,8 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
   const [errorMessage, setErrorMessage] = useState(false);
   const { customerName, customermobile } = fullName;
   const [itemId, setItemId] = useState<number | null>(null);
-  const [foodList, setFoodList] = useState<fudType[]>([] as fudType[]);
+
+  const listArRef = useRef<HomeInType[][]>([] as HomeInType[][]);
 
   const updateQuantity = (
     id: number,
@@ -703,7 +716,7 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
       });
     }
   };
-  let listAr: fudType[] = useMemo(() => [], []);
+  // let listAr: fudType[][] = useMemo(() => [], []);
 
   useEffect(() => {
     totalCartValue();
@@ -713,39 +726,50 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
     handleSearch(searchTerm);
   }, [searchTerm]);
 
+  const homeList1 = useCallback(() => {
+    if (menuItems.length === 0) {
+      listArRef.current = foodObjArr1.map((food) => {
+        return food.item.map((foodItem) => {
+          return {
+            id: foodItem.ID,
+            name: foodItem.title,
+            quantity: foodItem.quantity,
+          };
+        });
+      });
+    }
+    return listArRef;
+  }, [menuItems.length]);
+
+  const homeList2 = useCallback(() => {
+    if (menuItems.length > 0) {
+      listArRef.current = menuItems.map((food) => {
+        return food.map((foodItem) => {
+          return {
+            id: foodItem.ID,
+            name: foodItem.title,
+            quantity: foodItem.quantity,
+          };
+        });
+      });
+    }
+    return listArRef;
+  }, [menuItems]);
+
   useEffect(() => {
     setFoodItems(foodItemArr);
-
-    foodObjArr1.map((food) => {
-      return food.item.map((foodItem) => {
-        return listAr.push({
-          id: foodItem.ID,
-          name: foodItem.title,
-          quantity: foodItem.quantity,
-        });
-      });
-    });
-
-    setFoodList([...listAr]);
-  }, [listAr]);
+    homeList1();
+  }, [homeList1]);
 
   useEffect(() => {
-    menuItems.map((food) => {
-      return food.map((foodItem) => {
-        return listAr.push({
-          id: foodItem.ID,
-          name: foodItem.title,
-          quantity: foodItem.quantity,
-        });
-      });
-    });
-    setFoodList(listAr);
-  }, [menuItems, listAr]);
+    homeList2();
+  }, [menuItems, homeList2]);
 
   return (
     <StateContext.Provider
       value={{
         menuItems,
+        listArRef,
         foodID,
         searchTerm,
         activeMenu,
@@ -781,7 +805,6 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
         display,
         itemId,
         foodItems,
-        foodList,
       }}
     >
       {children}
