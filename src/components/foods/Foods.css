@@ -31,40 +31,53 @@
   justify-content: center;
   align-items: center;
   list-style: none;
-  border: #19195b solid 1px;
-  /* border-radius: 1rem; */
-  box-shadow: 0 2px 2px #06203a;
-  /* color: #0a6135; */
-  background-color: #a6c1b9;
-  height: 300px;
-  width: 260px;
+  row-gap: 5px;
+  /* border: #19195b solid 1px;
+  box-shadow: 0 2px 2px #06203a; */
+  padding-top: 10px;
+  margin-left: 5px;
+  width: 270px;
+  height: 360px;
 }
-
-.ulFoodDetails {
-  list-style: none;
-}
-
 .foodItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  column-gap: 120px;
   font-size: 1.3rem;
   /* background-color: #0225250e; */
 }
 
+.image {
+  background-color: #a6c1b9;
+  height: 300px;
+  width: 270px;
+  text-align: center;
+  padding-top: 10px;
+}
+.foodImg {
+  width: 240px;
+  height: 250px;
+  box-shadow: 0 2px 2px #06203a;
+  border: #19195b solid 1px;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  cursor: pointer;
+}
+.ulFoodDetails {
+  list-style: none;
+}
+
 .foodName {
-  color: #fff;
+  color: #095e1a;
   font-size: 2.2rem;
   font-weight: 700;
   text-align: center;
   margin-right: 20px;
 }
 
-.foodDesc {
-  color: #fff;
-  margin: 0;
-  text-wrap: wrap;
-}
-
 .foodPrice {
-  color: #fff;
+  color: #095e1a;
   margin: 0;
   font-weight: 700;
   text-align: center;
@@ -99,7 +112,7 @@
 
 .searchInput::placeholder {
   font-size: 2.5rem;
-  color: #3e4555;
+  color: #095e1a;
 }
 
 .search svg {
@@ -109,15 +122,7 @@
   height: 35px;
   width: 35px;
   cursor: pointer;
-  color: #ccc;
-}
-
-.foodImg {
-  width: 250px;
-  height: 240px;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-  cursor: pointer;
+  color: #59705e;
 }
 
 /*TABLETS*/
@@ -129,23 +134,28 @@
     row-gap: 1rem;
   }
   .foodImg {
-    width: 235px;
+    width: 230px;
     height: 220px;
     cursor: pointer;
   }
   .liFoods {
-    height: 300px;
+    height: 290px;
     width: 250px;
   }
-  .foodItem .foodName {
+  .image {
+    height: 240px;
+    width: 240px;
+    padding-top: 10px;
+  }
+  .foodItem {
+    column-gap: 110px;
+  }
+
+  .foodName {
     font-size: 2.6rem;
     font-weight: 600;
   }
 
-  .foodItem .foodPrice svg {
-    width: 15px;
-    height: 15px;
-  }
   .foods__form > h2 {
     font-size: 2.5rem;
     color: #000;
@@ -162,16 +172,16 @@
   }
 
   .searchInput::placeholder {
-    font-size: 2rem;
-    color: #3e4555;
+    font-size: 2.5rem;
+    color: #095e1a;
   }
 
   .search svg {
     position: absolute;
     left: -4px;
-    top: 8px;
+    top: 13px;
     cursor: pointer;
-    color: #ccc;
+    color: #59705e;
   }
 
   .home svg {
@@ -185,7 +195,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 500px;
+    width: 480px;
   }
   .ulFoods {
     display: grid;
@@ -193,17 +203,24 @@
     justify-content: center;
     align-items: center;
   }
+  .foodItem {
+    column-gap: 180px;
+  }
   .liFoods {
-    row-gap: 30px;
+    row-gap: 6px;
     height: 400px;
     width: 350px;
   }
-
+  .image {
+    height: 320px;
+    width: 320px;
+  }
   .foodImg {
     width: 300px;
-    height: 300px;
+    height: 298px;
     cursor: pointer;
   }
+
   .foods__form > h2 {
     font-size: 2.5rem;
     color: #000;
@@ -214,7 +231,7 @@
     height: 60px;
   }
 
-  .search input[type="search"] {
+  input[type="search"] {
     font-size: 20px;
     width: 300px;
     height: 60px;
@@ -222,15 +239,15 @@
   }
 
   .searchInput::placeholder {
-    font-size: 30px;
+    font-size: 22px;
     padding-top: 15px;
   }
 
-  .search .searchSvg {
+  .search svg {
     width: 50px;
     height: 50px;
-    left: 12px;
-    top: 6px;
+    left: 5px;
+    top: 16px;
   }
 
   .home svg {
@@ -238,11 +255,11 @@
     height: 30px;
   }
   .foodName {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 600;
   }
   .foodPrice {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 600;
   }
 }

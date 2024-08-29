@@ -8,7 +8,7 @@ import {
   initialStateType,
   useStateContext,
 } from "../../contexts/ContextProvider";
-import { MdCircle } from "react-icons/md";
+// import { MdCircle } from "react-icons/md";
 
 type FoodsProps = {
   menuItems: fudInType[][];
@@ -53,19 +53,19 @@ const Foods = () => {
               onClick={(event) => handleSelectObj(event)}
               key={item.id}
             >
-              <Link to="/orders">
-                <img
-                  className="foodImg"
-                  src={require(`../../images/${item.image}`)}
-                  alt={item.name}
-                />
-              </Link>
+              <div className="image">
+                <Link to="/orders">
+                  <img
+                    className="foodImg"
+                    src={require(`../../images/${item.image}`)}
+                    alt={item.name}
+                  />
+                </Link>
+              </div>
 
               <div className="foodItem">
                 <span className="foodName"> {item.name}</span>
-                <span className="foodPrice">
-                  <MdCircle /> ${item.price}
-                </span>
+                <span className="foodPrice">${item.price}</span>
               </div>
             </li>
           );

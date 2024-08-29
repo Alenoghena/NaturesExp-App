@@ -138,9 +138,7 @@
     align-items: start;
     width: 480px;
   }
-  .menu {
-    font-size: 40px;
-  }
+
   .links {
     height: 4rem;
   }
@@ -170,7 +168,7 @@
   }
 
   .headerBtn {
-    top: 40px;
-    left: 10px;
+    top: 20px;
+    left: -10px;
   }
 }
