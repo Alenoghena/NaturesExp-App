@@ -122,9 +122,11 @@ h1 {
 @media screen and (max-width: 768px) {
   .home {
     margin-top: 0.2rem;
+    width: 768px;
   }
   .farmContainer {
     height: 650px;
+    width: 768px;
   }
   .farmContent {
     font-size: 3rem;
