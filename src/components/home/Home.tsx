@@ -1,10 +1,12 @@
-import { useRef } from "react";
+import { useRef, lazy, Suspense } from "react";
 import { MdCheck } from "react-icons/md";
 import { useStateContext, HomeInType } from "../../contexts/ContextProvider";
 import Header from "../App/header/Header";
 import { MdMoveDown } from "react-icons/md";
-import Foods from "../foods/Foods";
 import "./Home.css";
+
+//Lazy Loading
+const Foods = lazy(() => import("../foods/Foods"));
 
 type HomeProps = {
   listArRef: React.MutableRefObject<HomeInType[][]>;
@@ -48,10 +50,8 @@ const Home = () => {
             return food.map((item) => {
               return (
                 <li key={item.id} className="liApp">
-                  <span className="check">
-                    <MdCheck />
-                  </span>
-                  <span> {item.name}</span>
+                  <MdCheck className="check" />
+                  <span className="quantName"> {item.name}</span>
                   <span className="quantItem">{item.quantity}</span>
                 </li>
               );
@@ -61,7 +61,9 @@ const Home = () => {
       </div>
 
       <div ref={sectionRef} className="foodList">
-        <Foods />
+        <Suspense fallback={<div>Foods detail loading...</div>}>
+          <Foods />
+        </Suspense>
       </div>
     </div>
   );

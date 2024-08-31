@@ -21,7 +21,6 @@ h3 {
 .cartList {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  column-gap: 2px;
   justify-content: center;
   align-items: center;
 }
@@ -36,7 +35,15 @@ h3 {
 }
 
 .cartItem {
-  height: 500px;
+  height: 450px;
+  width: 280px;
+}
+.CartImg {
+  height: 300px;
+  width: 265px;
+  margin-bottom: 10px;
+  border-radius: 1rem;
+  cursor: pointer;
 }
 
 .cartItem svg {
@@ -44,14 +51,13 @@ h3 {
   min-width: 30px;
   height: 22px;
   font-size: 2rem;
-  /* font-size: 2rem; */
   color: #093305;
   cursor: pointer;
 }
 
 .cartItem p {
-  font-size: 1.8rem;
-  width: 150px;
+  font-size: 1.6rem;
+  width: 260px;
   color: #000;
   font-weight: 500;
 }
@@ -65,13 +71,6 @@ h3 {
   row-gap: 20px;
 }
 
-.CartImg {
-  height: 300px;
-  width: 250px;
-  margin-bottom: 10px;
-  border-radius: 1rem;
-  cursor: pointer;
-}
 .liMessage svg {
   font-size: 1.6rem;
   font-weight: 500;
@@ -96,18 +95,10 @@ h3 {
   font-size: 2.5rem;
 }
 @media screen and (max-width: 768px) {
-  /* .cart {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-content: center;
-    align-items: center;
-    row-gap: 10px;
-  } */
   .cartList {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* position: relative; */
-    /* column-gap: 2px; */
+    row-gap: 20px;
     justify-content: center;
     align-items: center;
     width: 768px;
@@ -118,13 +109,14 @@ h3 {
     margin-bottom: 10px;
   }
   .CartImg {
-    height: 180px;
-    width: 220px;
+    height: 260px;
+    width: 242px;
     margin-bottom: 10px;
   }
   .cartItem {
-    height: 300px;
+    height: 390px;
     width: 250px;
+    row-gap: 20px;
   }
   .heading {
     font-size: 3rem;
@@ -138,27 +130,24 @@ h3 {
     justify-content: center;
     align-items: center;
   }
-  .selItem p {
+  .cartItem p {
     font-size: 1.6rem;
-    width: 200px;
+    width: 350px;
     color: #000;
     font-weight: 500;
     text-align: center;
-    text-wrap: wrap;
   }
   .liMessage label {
-    font-size: 1.7rem;
+    font-size: 1.9rem;
     justify-self: center;
     font-weight: 500;
-    margin-bottom: 20px;
-    /* width: 760px; */
+    margin: 20px 0;
   }
-  .liMessage h3 {
-    margin-bottom: 200px;
-  }
+
   h3 {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     font-weight: 500;
+    margin-bottom: 200px;
   }
   .foods__link svg {
     font-size: 2rem;
@@ -184,8 +173,7 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* position: relative; */
-    row-gap: 20px;
+    row-gap: 10px;
     width: inherit;
   }
   .cart h2 {
@@ -196,13 +184,11 @@ h3 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    box-shadow: 0 2px 2px #06203a;
-    border: #19195b solid 1px;
-    background-color: #a6c1b9;
     align-items: center;
-    width: 350px;
-    height: 420px;
-    margin-bottom: 10px;
+    row-gap: 15px;
+    width: 420px;
+    height: 400px;
+    margin-bottom: 20px;
   }
   .CartImg {
     width: 300px;
@@ -221,8 +207,9 @@ h3 {
     margin: 20px 0;
   }
   .cartItem p {
-    font-size: 2.2rem;
-    width: 320px;
+    font-size: 2rem;
+    width: 400px;
+    text-align: center;
     color: #000;
     font-weight: 500;
     margin-bottom: 10px;
@@ -245,7 +232,7 @@ h3 {
     width: 400px;
   }
   .liMessage h3 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 500;
     margin-bottom: 150px;
   }

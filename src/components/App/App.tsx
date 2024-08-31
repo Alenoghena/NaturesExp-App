@@ -5,10 +5,9 @@ import Home from "../home/Home";
 import "./App.css";
 import Contact from "./contact/Contact";
 import { lazy, Suspense } from "react";
-import FoodOrder from "../orders/FoodOrder";
 
 //Lazy Loading
-// const Foods = lazy(() => import("../foods/Foods"));
+const FoodOrder = lazy(() => import("../orders/FoodOrder"));
 
 const Cart = lazy(() => import("../cart/Cart"));
 
@@ -22,8 +21,14 @@ const App = () => {
             <Route path="/" element={<Home />} />
 
             <Route path="/contact" element={<Contact />} />
-            <Route path="/orders" element={<FoodOrder />} />
-            {/* <Route path="/foodNav" element={<FoodNav />} /> */}
+            <Route
+              path="/orders"
+              element={
+                <Suspense fallback={<div>FoodOrder detail loading...</div>}>
+                  <FoodOrder />
+                </Suspense>
+              }
+            />
 
             <Route
               path="/cart"
@@ -33,6 +38,7 @@ const App = () => {
                 </Suspense>
               }
             />
+
             <Route path="/error" element={<Error />} />
           </Routes>
         </div>

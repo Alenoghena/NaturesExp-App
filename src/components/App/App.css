@@ -26,22 +26,16 @@ body {
   font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #444;
   background: #a6c1b9;
-  /* background-color: #39b385; */
-
   /* overflow-y: scroll; */
 }
 
 .App {
-  /* background: #a6c1b9; */
   background: #5d966e6a;
   color: white;
   border: #a5c1f6 solid 2px;
-  /* margin: 0 32px 0 64px; */
   margin: 0 auto;
   width: 1400px;
-
   /* transform: translate(-50%, 0%); */
-  /* background-image: url(../../img/mediumField.jpg); */
 }
 
 .main {
@@ -105,7 +99,6 @@ h4 {
   }
   .footer {
     font-size: 120%;
-    /* width: 820px; */
   }
   .main-content {
     grid-column: 2/-1;

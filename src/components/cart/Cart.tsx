@@ -43,7 +43,7 @@ const Cart = () => {
   return (
     <div className="cart">
       {display && (
-        <div>
+        <div className="listMsgContainer">
           <h2 className="heading">Your Cart List</h2>
           <div className="foods__link">
             <Link to="/">

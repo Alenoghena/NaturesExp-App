@@ -93,15 +93,9 @@
 .settingsbtn span {
   color: #fff;
 }
-@media screen and (max-width: 768px) {
-  /* .links {
-    display: flex;
-    flex-direction:row;
-    justify-content: left;
-    align-items: center;
-    width: 500px;
-  } */
 
+/* Tablets */
+@media screen and (max-width: 768px) {
   .title {
     color: #042e35;
     font-weight: 700;
@@ -116,11 +110,10 @@
     font-size: 160%;
     margin: 10px 0;
   }
-  .outlineMenu {
-    justify-self: left;
-    align-self: self-start;
-  }
 
+  .headerBtn {
+    left: -50px;
+  }
   .settingsbtn span,
   .foodsLink span,
   .contactsLink span,
