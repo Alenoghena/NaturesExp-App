@@ -62,11 +62,6 @@ const Cart = () => {
                     alt={item.name}
                     onClick={() => handleCartTrash(item.id)}
                   />
-                  <p>
-                    {item.quantity} {item.name}-{item.price}$ each-$
-                    {item.totalAmount}
-                  </p>
-
                   {itemId === item.id && (
                     <FaTrashAlt
                       role="button"
@@ -75,6 +70,10 @@ const Cart = () => {
                       onClick={() => handleDelete(item.id)}
                     />
                   )}
+                  <p>
+                    {item.quantity} {item.name}-{item.price}$ each-$
+                    {item.totalAmount}
+                  </p>
                 </li>
               );
             })}
