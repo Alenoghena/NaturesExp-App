@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Foods.css";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -22,7 +22,34 @@ type FoodsProps = {
 const Foods = () => {
   const { foodItems, searchTerm, setSearchTerm, handleSelectObj }: FoodsProps =
     useStateContext();
-  console.log(foodItems);
+
+  const [hidden, setHidden] = useState("hidden");
+  const [ID, setID] = useState<number>(0);
+
+  const handleMouseHover = (id: number) => {
+    foodItems.map((item) => {
+      if (item.id === id) {
+        if (hidden === "hidden" && ID === 0) {
+          setHidden("show");
+          setID(id);
+        }
+      }
+      return item;
+    });
+  };
+
+  const handleMouseOut = (id: number) => {
+    foodItems.map((item) => {
+      if (item.id === id) {
+        if (hidden === "show" && ID === id) {
+          setHidden("hidden");
+          setID(0);
+        }
+      }
+      return item;
+    });
+  };
+
   return (
     <div className="foods">
       <div className="foods__form">
@@ -53,14 +80,26 @@ const Foods = () => {
               onClick={(event) => handleSelectObj(event)}
               key={item.id}
             >
-              <div className="image">
+              <div
+                className="image"
+                onPointerLeave={() => handleMouseOut(item.id)}
+              >
                 <Link to="/orders">
                   <img
                     className="foodImg"
                     src={require(`../../images/${item.image}`)}
                     alt={item.name}
+                    onPointerEnter={() => handleMouseHover(item.id)}
                   />
                 </Link>
+
+                {item.id === ID && (
+                  <Link to="/orders">
+                    <button className={`image--btn ${hidden}`}>
+                      Click to Order
+                    </button>
+                  </Link>
+                )}
               </div>
 
               <div className="foodItem">
