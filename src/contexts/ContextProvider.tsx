@@ -93,6 +93,7 @@ type useContextType = {
   ) => void;
   handleClick: any;
   handleDelete: (id: any) => void;
+  handleRemoveItem: (id: any) => void;
   setQuantity: (value: React.SetStateAction<number>) => void;
   setFullName: React.Dispatch<
     React.SetStateAction<{
@@ -609,6 +610,30 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
 
     setMenuItems([...updatedMenuItems]);
   };
+  ///Remove the item
+  const handleRemoveItem = (id: number) => {
+    let cartList: foodArrType;
+
+    const updatedMenuItems = menuItems.map((food) => {
+      const index = cart.findIndex((item: foodType) => item.id === id);
+      return food.map((item) => {
+        if (item.ID === id) {
+          //filter and keep item.id not equal to selected id
+          cartList = cart.filter((item: foodType) => item.id !== id);
+
+          setCart([...cartList]);
+
+          return {
+            ...item, //we are spreading the item, an object, here
+            quantity: item.quantity + cart[index].quantity,
+          };
+        }
+        return item;
+      });
+    });
+
+    setMenuItems([...updatedMenuItems]);
+  };
 
   const handleSearch = (search: string) => {
     if (search) {
@@ -800,6 +825,7 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
         setFullName,
         setQuantity,
         handleDelete,
+        handleRemoveItem,
         customerName,
         errorMessage,
         display,

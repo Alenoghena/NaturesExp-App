@@ -1,5 +1,5 @@
 import "./Cart.css";
-import { FaTrashAlt } from "react-icons/fa";
+import { FaTimes, FaTrashAlt } from "react-icons/fa";
 import {
   useStateContext,
   foodArrType,
@@ -16,11 +16,18 @@ type CartProps = {
   totalAmount: string;
   display: boolean;
   handleDelete: (id: number) => void;
+  handleRemoveItem: (id: number) => void;
 };
 
 const Cart = () => {
-  const { cart, customermobile, cartValue, display, handleDelete }: CartProps =
-    useStateContext();
+  const {
+    cart,
+    customermobile,
+    cartValue,
+    display,
+    handleDelete,
+    handleRemoveItem,
+  }: CartProps = useStateContext();
   const [itemId, setItemId] = useState<number | null>(null);
 
   const handleCartTrash = (id: number) => {
@@ -62,6 +69,16 @@ const Cart = () => {
                     alt={item.name}
                     onClick={() => handleCartTrash(item.id)}
                   />
+
+                  {itemId === item.id && (
+                    <FaTimes
+                      role="button"
+                      className="remove"
+                      tabIndex={0}
+                      aria-label={`Delete ${item.name}`}
+                      onClick={() => handleRemoveItem(item.id)}
+                    />
+                  )}
                   {itemId === item.id && (
                     <FaTrashAlt
                       role="button"
