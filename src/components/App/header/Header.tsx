@@ -26,7 +26,9 @@ const Header = () => {
             <span>Checkout</span>
           </Link>
           <section className=" settingsbtn">
-            <span>Settings</span>
+            <span>
+              <a href="#">Settings</a>
+            </span>
           </section>
         </section>
       </nav>

@@ -260,7 +260,7 @@ input[type="number"] {
   .foodOrder {
     display: grid;
     grid-template-columns: 1fr;
-    width: 480px;
+    width: 470px;
   }
 
   .ulFoodDetails {

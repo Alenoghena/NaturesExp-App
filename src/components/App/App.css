@@ -95,7 +95,7 @@ h4 {
 
 @media screen and (max-width: 768px) {
   .App {
-    width: 768px;
+    width: 765px;
   }
   .footer {
     font-size: 120%;
@@ -114,15 +114,16 @@ h4 {
 @media screen and (max-width: 480px) {
   .App {
     display: grid;
-    grid-template-columns: 32px 1fr;
+    grid-template-columns: 1fr;
     justify-content: center;
     align-items: center;
-    width: 480px;
+    width: 470px;
+    margin: 0 auto;
   }
 
-  .routes {
+  /* .routes {
     grid-column: 1/-1;
-  }
+  } */
   .footer {
     display: flex;
     flex-direction: column;
