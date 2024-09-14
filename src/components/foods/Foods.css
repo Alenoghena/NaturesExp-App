@@ -34,13 +34,16 @@
   row-gap: 5px;
   background-color: #a6c1b9;
   border-radius: 1rem;
-  border: #19195b solid 1px;
-  box-shadow: 0 1px 2px #06203a;
   padding-bottom: 10px;
-  /* margin-left: 5px; */
   width: 265px;
   height: 340px;
 }
+
+.liFoods:hover {
+  box-shadow: 0 1px 2px #06203a;
+  border: #19195b solid 1px;
+}
+
 .foodItem {
   display: flex;
   justify-content: space-between;
