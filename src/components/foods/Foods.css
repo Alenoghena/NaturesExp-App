@@ -17,13 +17,16 @@
 
 .ulFoods {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   justify-content: center;
   align-items: center;
   row-gap: 10px;
-  column-gap: 18px;
+  column-gap: auto;
   /* background-color: #aaaaa817; */
   padding-bottom: 20px;
+  /* width: 98%; */
+  height: auto;
+  margin: 0 auto;
 }
 .liFoods {
   display: flex;
@@ -35,8 +38,16 @@
   background-color: #a6c1b9;
   border-radius: 1rem;
   padding-bottom: 10px;
-  width: 260px;
-  height: 340px;
+  /* width: 260px; */
+  width: 96%;
+  height: auto;
+  margin: 0 auto;
+}
+/* Test */
+.liFoods::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 .liFoods:hover {
@@ -50,21 +61,24 @@
   align-items: start;
   column-gap: 120px;
   font-size: 1.3rem;
+  width: 96%;
+  padding: 0 10px;
 }
 
 .image {
   background-color: #a6c1b9;
   position: relative;
-  height: 300px;
-  width: 260px;
+  height: auto;
+  /* width: 260px; */
+  width: 96%;
   padding-bottom: 10px;
   overflow: hidden;
 }
 .image--btn {
   position: absolute;
   top: 130px;
-  font-size: 32px;
-  left: 3px;
+  font-size: 30px;
+  left: 4px;
   border-radius: 6px;
   padding: 15px 25px;
   background-color: #0a6135;
@@ -79,11 +93,13 @@
   display: grid;
 }
 .foodImg {
-  width: 258px;
+  /* width: 258px; */
+  width: 100%;
   height: 275px;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   cursor: pointer;
+  background-size: cover;
 }
 .ulFoodDetails {
   list-style: none;
