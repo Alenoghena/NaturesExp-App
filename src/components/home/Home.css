@@ -19,18 +19,19 @@ h1 {
   align-items: center;
   column-gap: 5px;
   /* width: 1400px; */
+  height: 100vh;
   width: 100%;
   background: #5d966e6a;
 }
 
 .check {
-  margin-top: 12px;
-  font-size: 20px;
-  margin-right: 20px;
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
 }
 .farmContent {
   position: absolute;
-  width: 350%;
+  width: 400%;
   grid-column: 1/2;
   grid-row: 3/4;
   color: #fff;
@@ -74,7 +75,7 @@ h1 {
 
 .farmImg {
   width: 100%;
-  height: 800px;
+  height: 100vh;
   grid-column: 1/3;
   grid-row: 1/-1;
   padding-bottom: 20px;
@@ -85,7 +86,7 @@ h1 {
 .liAppHeading {
   padding-bottom: 20px;
   color: #0a6135;
-  font-size: 3.5rem;
+  font-size: 256%;
   line-height: 40px;
   letter-spacing: 1.1px;
   font-weight: 600;
@@ -94,7 +95,7 @@ h1 {
 .liApp {
   display: flex;
   color: #05301b;
-  font-size: 2.5rem;
+  font-size: 220%;
   line-height: 36px;
   letter-spacing: 1.5px;
   font-weight: 400;
@@ -117,6 +118,37 @@ h1 {
   width: 80%;
 }
 
+@media screen and (max-width: 1290px) {
+  .home {
+    width: 1250px;
+    margin: 0 auto;
+  }
+  .farmContainer {
+    width: 1250px;
+    height: 650px;
+  }
+  .liAppHeading {
+    font-size: 260%;
+    line-height: 40px;
+  }
+  .liApp {
+    font-size: 220%;
+    line-height: 30px;
+  }
+  .check {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+  .farmContent {
+    width: 400%;
+    line-height: 80px;
+  }
+  .farmImg {
+    height: 650px;
+  }
+}
+
 /*TABLETS*/
 
 @media screen and (max-width: 768px) {
@@ -130,29 +162,28 @@ h1 {
     width: 768px;
   }
   .farmContent {
-    font-size: 3rem;
+    font-size: 3.5rem;
+    line-height: 50px;
   }
 
-  .farmImg {
-    height: 650px;
-  }
-  .liApp {
-    font-size: 1.8rem;
-    line-height: 28px;
-  }
   .liApp .check {
-    height: 20px;
-    width: 20px;
+    height: 18px;
+    width: 18px;
   }
 
   .scrollDown {
     font-size: 2rem;
   }
 
+  .liApp {
+    font-size: 148%;
+    line-height: 25px;
+  }
+
   .liAppHeading {
-    font-size: 180%;
+    font-size: 172%;
     font-weight: 600;
-    line-height: 28px;
+    line-height: 26px;
   }
 
   .App__header {
@@ -181,6 +212,10 @@ h1 {
   .settingsbtn {
     font-size: 24px;
   }
+
+  .farmImg {
+    height: 650px;
+  }
 }
 
 /*Mobiles*/
@@ -193,7 +228,7 @@ h1 {
     grid-template-columns: 1fr;
     justify-content: center;
     align-items: center;
-    height: 1260px;
+    height: 1100px;
     width: 470px;
   }
 
@@ -201,7 +236,7 @@ h1 {
     width: 470px;
   }
   .farmContent {
-    top: 470px;
+    top: 250px;
     left: 6px;
     grid-row: 1;
     font-size: 3.2em;
@@ -219,7 +254,7 @@ h1 {
   .farmImg {
     grid-row: 1/2;
     width: 470px;
-    height: 800px;
+    height: 650px;
   }
 
   .liAppHeading {
@@ -239,12 +274,12 @@ h1 {
     font-weight: 500;
     grid-row: 1;
     grid-column: auto;
-    top: 600px;
+    top: 450px;
     left: 0;
   }
   h1 {
     grid-row: 1;
-    top: 200px;
+    top: 150px;
     left: 6px;
     font-size: 30px;
   }

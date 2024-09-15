@@ -92,6 +92,15 @@
   color: #718a8a;
 }
 
+@media screen and (max-width: 1290px) {
+  .foodsLink,
+  .contactsLink,
+  .cartLink,
+  .settingsbtn span a {
+    font-size: 1.5em;
+  }
+}
+
 /* Tablets */
 @media screen and (max-width: 768px) {
   .title {

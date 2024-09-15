@@ -94,6 +94,12 @@ h4 {
   line-height: 40px;
 }
 
+@media screen and (max-width: 1290px) {
+  .App {
+    width: 1280px;
+    margin: 0 auto;
+  }
+}
 /*TABLETS*/
 
 @media screen and (max-width: 768px) {
