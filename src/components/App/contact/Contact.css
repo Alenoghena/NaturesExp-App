@@ -6,6 +6,7 @@
   font-size: 3rem;
   row-gap: 10px;
   padding: 8rem 0;
+  min-height: 100vh;
 }
 .contactsContainer p {
   line-height: 40px;
