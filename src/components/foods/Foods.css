@@ -17,7 +17,7 @@
 
 .ulFoods {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   justify-content: center;
   align-items: center;
   row-gap: 10px;
@@ -42,12 +42,6 @@
   width: 96%;
   height: auto;
   margin: 0 auto;
-}
-/* Test */
-.liFoods::after {
-  content: "";
-  display: block;
-  clear: both;
 }
 
 .liFoods:hover {
@@ -78,7 +72,7 @@
   position: absolute;
   top: 130px;
   font-size: 30px;
-  left: 4px;
+  left: 7px;
   border-radius: 6px;
   padding: 15px 25px;
   background-color: #0a6135;
@@ -159,6 +153,31 @@
   width: 35px;
   cursor: pointer;
   color: #59705e;
+}
+
+@media screen and (max-width: 1290px) {
+  .ulFoods {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 1rem;
+  }
+
+  .image--btn {
+    left: 3.2px;
+    font-size: 26px;
+  }
+}
+@media screen and (max-width: 1018px) {
+  .ulFoods {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 1rem;
+  }
+
+  .image--btn {
+    left: 1.2px;
+    font-size: 35px;
+  }
 }
 
 /*TABLETS*/
